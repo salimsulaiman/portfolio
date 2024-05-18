@@ -21,7 +21,7 @@ function Bio() {
     document.body.removeChild(link);
   };
   return (
-    <div className="bg-white rounded-xl px-6 pt-8 pb-6 col-span-2 relative h-fit shadow-sm">
+    <div className="bg-white rounded-xl px-6 pt-8 pb-6 col-span-4 relative h-fit shadow-sm">
       <div
         className={`w-32 h-32 bg-slate-200 rounded-lg absolute left-1/2 -translate-x-1/2 -top-10 z-10 overflow-hidden ${
           imageLoaded ? "" : "skeleton"
@@ -37,9 +37,9 @@ function Bio() {
           onLoad={handleImageLoad}
         />
       </div>
-      <h2 className="text-lg text-slate-600 font-medium text-center mt-20">Salim Sulaiman</h2>
+      <h2 className="text-lg text-slate-600 font-bold text-center mt-20">Salim Sulaiman</h2>
       <div className="text-center mt-4">
-        <h4 className="bg-slate-100 text-xs p-2 text-center text-slate-500 font-medium rounded-lg inline-block">
+        <h4 className="bg-slate-100 text-sm p-2 text-center text-slate-500 font-medium rounded-lg inline-block">
           Frontend Web Development
         </h4>
         <div className="grid grid-cols-6 gap-2 mt-4 text-slate-500">
@@ -73,7 +73,7 @@ function Bio() {
           </div>
           <div className="col-span-8 flex flex-col justify-center">
             <h5 className="text-[10px] text-slate-400 font-medium">Email</h5>
-            <h4 className="text-xs text-slate-500 font-medium">salimsulaiman75@gmail.com</h4>
+            <h4 className="text-sm text-slate-500 font-medium">salimsulaiman75@gmail.com</h4>
           </div>
         </div>
         <div className="w-full grid grid-cols-10 gap-2 mt-4">

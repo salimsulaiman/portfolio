@@ -5,7 +5,7 @@ import { MdWork } from "react-icons/md";
 
 function Resume() {
   return (
-    <div className="bg-white rounded-xl col-span-4 h-fit relative shadow-sm">
+    <div className="bg-white rounded-xl col-span-7 h-fit relative shadow-sm">
       <div className="p-8">
         <div className="flex items-center">
           <h1 className="text-4xl text-slate-600 font-medium me-4">Resume</h1>
@@ -77,7 +77,7 @@ function Resume() {
       </div>
       <div className="w-full bg-slate-100">
         <div className="p-8">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-8">
             <div className="grid-cols-1 gap-4">
               <div className="flex items-center">
                 <h4 className="text-lg text-slate-700 font-medium mb-4">Working Skills</h4>

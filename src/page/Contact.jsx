@@ -11,13 +11,13 @@ function Contact() {
     alert("Terimakasih, kami akan segera membalas pesan anda");
   };
   return (
-    <div className="bg-white rounded-xl p-8 col-span-4 h-fit relative shadow-sm">
+    <div className="bg-white rounded-xl p-8 col-span-7 h-fit relative shadow-sm">
       <div className="flex items-center">
         <h1 className="text-4xl text-slate-600 font-medium me-4">Contact</h1>
         <div className="w-2/5 h-1 rounded-xl bg-blue-500"></div>
       </div>
       <div className="bg-slate-100 rounded-lg p-8 mt-4">
-        <h1 className="text-lg text-slate-600">
+        <h1 className="text-base text-slate-600">
           For further discussion abaout <b>Skills</b> or <b>Project</b>, contact me via the form or email.
         </h1>
         <form action="" className="mt-4 w-full" onSubmit={handleSend}>

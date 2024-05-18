@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 function About() {
   return (
-    <div className="bg-white rounded-xl p-8 col-span-4 h-fit relative shadow-sm">
+    <div className="bg-white rounded-xl p-8 col-span-7 h-fit relative shadow-sm">
       <div className="flex items-center">
         <h1 className="text-4xl text-slate-600 font-medium me-4">About</h1>
         <div className="w-2/5 h-1 rounded-xl bg-blue-500"></div>

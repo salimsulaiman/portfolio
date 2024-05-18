@@ -5,7 +5,11 @@ export default {
     themes: ["light", "dark"],
   },
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
+    },
   },
   plugins: [require("daisyui")],
 };
