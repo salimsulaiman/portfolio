@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Profile from "../assets/profile.png";
 import { FaDownload, FaFacebookF, FaGift, FaGithub, FaInstagram, FaLinkedinIn, FaLocationDot } from "react-icons/fa6";
 import { IoMdPhonePortrait } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 
 function Bio() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <div className="bg-white rounded-xl px-6 pt-8 pb-6 col-span-2 relative h-fit shadow-sm">
-      <div className="w-32 h-32 bg-slate-200 rounded-lg absolute left-1/2 -translate-x-1/2 -top-10 z-10 overflow-hidden">
-        <img src={Profile} alt="" className="object-cover w-full h-full" />
+      <div
+        className={`w-32 h-32 bg-slate-200 rounded-lg absolute left-1/2 -translate-x-1/2 -top-10 z-10 overflow-hidden ${
+          imageLoaded ? "" : "skeleton"
+        }`}
+      >
+        {!imageLoaded && (
+          <div className="w-full h-full"></div> // Placeholder for the skeleton
+        )}
+        <img
+          src={Profile}
+          alt=""
+          className={`object-cover w-full h-full ${imageLoaded ? "" : "hidden"}`}
+          onLoad={handleImageLoad}
+        />
       </div>
       <h2 className="text-lg text-slate-600 font-medium text-center mt-20">Salim Sulaiman</h2>
       <div className="text-center mt-4">
