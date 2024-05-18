@@ -12,13 +12,13 @@ function About() {
         <h1 className="text-4xl text-slate-600 font-medium me-4">About</h1>
         <div className="w-2/5 h-1 rounded-xl bg-blue-500"></div>
       </div>
-      <p className="text-sm text-slate-500 mt-4">
+      <p className="text-base text-slate-500 mt-4">
         Frontend Web Developer with over 1 year of experience in programming, passionate about creating responsive and
         dynamic user interfaces. Skilled in using frameworks such as React.js, Express.js, Next.js, Laravel, Tailwind,
         and Bootstrap to build interactive and user-friendly web applications. Proficient in collaborating with UI/UX
         and backend teams to seamlessly implement design and system functionality.
       </p>
-      <p className="text-sm text-slate-500 mt-4">
+      <p className="text-base text-slate-500 mt-4">
         Comprehensive understanding of software development concepts, including Agile methodologies and UI/UX
         principles.
       </p>
