@@ -3,6 +3,7 @@ import Profile from "../assets/profile.png";
 import { FaDownload, FaFacebookF, FaGift, FaGithub, FaInstagram, FaLinkedinIn, FaLocationDot } from "react-icons/fa6";
 import { IoMdPhonePortrait } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
+import CV from "../assets/CV_Salim_Bin_Sulaiman_Bahres.pdf";
 
 function Bio() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -11,6 +12,14 @@ function Bio() {
     setImageLoaded(true);
   };
 
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = CV;
+    link.setAttribute("download", "CV.pdf");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <div className="bg-white rounded-xl px-6 pt-8 pb-6 col-span-2 relative h-fit shadow-sm">
       <div
@@ -86,7 +95,10 @@ function Bio() {
           </div>
         </div>
       </div>
-      <button className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg text-white text-sm mt-4 flex items-center mx-auto">
+      <button
+        className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg text-white text-sm mt-4 flex items-center mx-auto"
+        onClick={handleDownloadCV}
+      >
         <span className="me-2">
           <FaDownload />
         </span>
