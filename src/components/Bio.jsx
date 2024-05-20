@@ -59,7 +59,7 @@ function Bio() {
       <h2 className="text-xl md:text-base lg:text-lg text-slate-600 font-bold text-center mt-20">Salim Sulaiman</h2>
       <div className="text-center mt-4">
         <h4 className="bg-slate-100 text-lg md:text-xs lg:text-sm p-2 text-center text-slate-500 font-medium rounded-lg inline-block">
-          Frontend Web Development
+          Frontend Web Developer
         </h4>
         <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-6 gap-2 mt-4 text-slate-500">
           <div
