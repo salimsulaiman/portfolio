@@ -5,23 +5,23 @@ import { MdWork } from "react-icons/md";
 
 function Resume() {
   return (
-    <div className="bg-white rounded-xl col-span-7 h-fit relative shadow-sm">
+    <div className="bg-white rounded-xl h-fit relative shadow-sm">
       <div className="p-8">
-        <div className="flex items-center">
-          <h1 className="text-4xl text-slate-600 font-medium me-4">Resume</h1>
-          <div className="w-2/5 h-1 rounded-xl bg-blue-500"></div>
+        <div className="flex items-start sm:items-center flex-col sm:flex-row">
+          <h1 className="text-xl sm:text-3xl lg:text-4xl text-slate-600 font-bold me-4">Resume</h1>
+          <div className="w-2/5 h-1 rounded-xl bg-blue-500 mt-4 sm:mt-0"></div>
         </div>
-        <div className="grid grid-cols-2 gap-4 mt-4 text-slate-600 h-fit">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-slate-600 h-fit">
           {/* education */}
           <div className="grid grid-cols-1 gap-4 h-fit">
             <div className="flex items-center">
               <FaGraduationCap className="me-2 text-2xl text-blue-500" />
-              <h4 className="text-lg text-slate-700 font-medium">Education</h4>
+              <h4 className="text-base sm:text-lg text-slate-700 font-medium">Education</h4>
             </div>
             <div className="bg-rose-50 rounded-md p-4 cursor-default">
               <div className="flex flex-col items-start justify-center group">
                 <h4 className="text-xs text-slate-500 font-medium line-clamp-1">2020 - Now</h4>
-                <h3 className="text-slate-600 font-medium text-base line-clamp-1 mt-1 group-hover:line-clamp-none">
+                <h3 className="text-slate-600 font-bold text-sm sm:text-base line-clamp-1 mt-1 group-hover:line-clamp-none">
                   Informatics Engineering - <span className="font-normal">Universitas Dian Nuswantoro</span>
                 </h3>
                 <h4 className="text-sm text-slate-400 font-medium mt-1 line-clamp-1 group-hover:line-clamp-none">
@@ -32,7 +32,7 @@ function Resume() {
             <div className="bg-blue-50 rounded-md p-4 cursor-default">
               <div className="flex flex-col items-start justify-center group">
                 <h4 className="text-xs text-slate-500 font-medium line-clamp-1">2023</h4>
-                <h3 className="text-slate-600 font-medium text-base line-clamp-1 mt-1 group-hover:line-clamp-none">
+                <h3 className="text-slate-600 font-bold text-sm sm:text-base line-clamp-1 mt-1 group-hover:line-clamp-none">
                   Backend Web Development - <span className="font-normal">Skilvul</span>
                 </h3>
                 <h4 className="text-sm text-slate-400 font-medium mt-1 line-clamp-1">South Jakarta, Indonesia</h4>
@@ -41,7 +41,7 @@ function Resume() {
             <div className="bg-rose-50 rounded-md p-4 cursor-default">
               <div className="flex flex-col items-start justify-center group">
                 <h4 className="text-xs text-slate-500 font-medium line-clamp-1">2022</h4>
-                <h3 className="text-slate-600 font-medium text-base line-clamp-1 mt-1 group-hover:line-clamp-none">
+                <h3 className="text-slate-600 font-bold text-sm sm:text-base line-clamp-1 mt-1 group-hover:line-clamp-none">
                   Frontend Web Development - <span className="font-normal">Skilvul</span>
                 </h3>
                 <h4 className="text-sm text-slate-400 font-medium mt-1 line-clamp-1">South Jakarta, Indonesia</h4>
@@ -50,14 +50,14 @@ function Resume() {
           </div>
           {/* experience */}
           <div className="grid grid-cols-1 gap-4 h-fit">
-            <div className="flex items-center">
+            <div className="flex items-center mt-8 md:mt-0">
               <MdWork className="me-2 text-2xl text-blue-500" />
-              <h4 className="text-lg text-slate-700 font-medium">Experience</h4>
+              <h4 className="text-base sm:text-lg text-slate-700 font-medium">Experience</h4>
             </div>
             <div className="bg-blue-50 rounded-md p-4 cursor-default">
               <div className="flex flex-col items-start justify-center group">
                 <h4 className="text-xs text-slate-500 font-medium line-clamp-1">2023-2024</h4>
-                <h3 className="text-slate-600 font-medium text-base line-clamp-1 mt-1 group-hover:line-clamp-none">
+                <h3 className="text-slate-600 font-bold text-sm sm:text-base line-clamp-1 mt-1 group-hover:line-clamp-none">
                   Frontend Web Development - <span className="font-normal">Durian Lab x Skilvul</span>
                 </h3>
                 <h4 className="text-sm text-slate-400 font-medium mt-1 line-clamp-1">South Jakarta, Indonesia</h4>
@@ -66,7 +66,7 @@ function Resume() {
             <div className="bg-rose-50 rounded-md p-4 cursor-default">
               <div className="flex flex-col items-start justify-center group">
                 <h4 className="text-xs text-slate-500 font-medium line-clamp-1">2019</h4>
-                <h3 className="text-slate-600 font-medium text-base line-clamp-1 mt-1 group-hover:line-clamp-none">
+                <h3 className="text-slate-600 font-bold text-sm sm:text-base line-clamp-1 mt-1 group-hover:line-clamp-none">
                   Flutter Development - <span className="font-normal">PT Whita Aplikasi Nusantara</span>
                 </h3>
                 <h4 className="text-sm text-slate-400 font-medium mt-1 line-clamp-1">South Jakarta, Indonesia</h4>
@@ -77,7 +77,7 @@ function Resume() {
       </div>
       <div className="w-full bg-slate-100">
         <div className="p-8">
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="grid-cols-1 gap-4">
               <div className="flex items-center">
                 <h4 className="text-lg text-slate-700 font-medium mb-4">Working Skills</h4>
