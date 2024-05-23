@@ -11,7 +11,7 @@ function Layout() {
   const { theme } = useContext(ThemeContext);
   return (
     <div
-      className="w-full min-h-screen bg-slate-100 pt-4 pb-12 font-poppins bg-cover bg-fixed"
+      className="w-full min-h-screen bg-slate-100 dark:bg-slate-900 pt-4 pb-12 font-poppins bg-cover bg-fixed"
       style={{ backgroundImage: `url(${theme == "dark" ? BackgroundDark : Background})` }}
     >
       <div className="max-w-[1124px] mx-auto pt-4 px-4 sm:px-8 flex justify-end">
