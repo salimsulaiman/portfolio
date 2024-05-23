@@ -4,8 +4,13 @@ export default {
   daisyui: {
     themes: ["light", "dark"],
   },
+  darkMode: "class",
   theme: {
     extend: {
+      backgroundImage: {
+        background: "url('./src//assets/background.png')",
+        backgroundDark: "url('./src/assets/backgroundDark.png')",
+      },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },

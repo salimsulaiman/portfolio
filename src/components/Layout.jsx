@@ -4,21 +4,16 @@ import { Outlet } from "react-router-dom";
 import Bio from "./Bio";
 import SideBar from "./SideBar";
 import Background from "../assets/background.png";
+import BackgroundDark from "../assets/backgroundDark.png";
 
 function Layout() {
   return (
-    <div
-      className="w-full min-h-screen bg-slate-100 pt-4 pb-12 font-poppins"
-      style={{
-        backgroundImage: `url(${Background})`,
-        backgroundSize: `cover`,
-        backgroundPosition: `fixed`,
-        backgroundAttachment: "fixed",
-      }}
-    >
-      {/* <Navbar /> */}
+    <div className="w-full min-h-screen bg-slate-100 pt-4 pb-12 font-poppins bg-background dark:bg-backgroundDark bg-cover bg-fixed">
+      <div className="max-w-[1124px] mx-auto pt-4 px-4 sm:px-8 flex justify-end">
+        <Navbar />
+      </div>
       <div
-        className="max-w-[1124px] mx-auto grid grid-cols-6 gap-4 pt-20 px-4 sm:px-8"
+        className="max-w-[1124px] mx-auto grid grid-cols-6 gap-4 pt-16 md:pt-20 px-4 sm:px-8"
         style={{ gridTemplateRows: "auto" }}
       >
         <div className="col-span-6 md:col-span-2">
