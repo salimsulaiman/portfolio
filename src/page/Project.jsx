@@ -23,15 +23,6 @@ function Project() {
         <h1 className="text-xl sm:text-3xl lg:text-4xl text-slate-600 font-bold me-4 dark:text-white">Project</h1>
         <div className="w-2/5 h-1 rounded-xl bg-blue-500 mt-4 sm:mt-0"></div>
       </div>
-      {/* <p className="text-sm lg:text-base text-slate-500 mt-4 text-justify sm:text-start">
-        The projects I have worked on so far are related to frontend development, specifically in user interface (UI)
-        and user experience (UX) design. In these projects, I frequently use technologies such as HTML, CSS, and
-        JavaScript to create responsive and interactive web pages. Additionally, I have experience with various frontend
-        frameworks and libraries like React, Bootstrap, Tailwind, and others.
-      </p>
-      <p className="text-sm lg:text-base text-slate-500 mt-4 text-justify sm:text-start">
-        I also have experience in creating RESTful APIs using JavaScript and the Express.js framework.
-      </p> */}
       <div className="flex flex-row items-center justify-end mt-4">
         <ul className="flex flex-row">
           <li
@@ -93,7 +84,7 @@ function Project() {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-3 gap-4 mt-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
           {project
             .filter((el) => {
               if (category == "all") {
@@ -106,7 +97,7 @@ function Project() {
               return (
                 <div
                   key={element?.id}
-                  className={`bg-slate-100 dark:bg-slate-700 aspect-square rounded-xl text-white flex flex-col items-start justify-start p-4 h-auto`}
+                  className={`bg-slate-100 dark:bg-slate-700 aspect-square rounded-xl text-white flex flex-col items-start justify-start p-2 sm:p-4 h-auto`}
                 >
                   <div className="bg-white w-full h-5/6 rounded-xl mb-4 overflow-hidden">
                     <img
