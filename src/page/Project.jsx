@@ -8,6 +8,7 @@ function Project() {
   const [project, setProject] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [category, setCategory] = useState("all");
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -19,6 +20,10 @@ function Project() {
 
   const handleFilterGenre = (filter) => {
     setCategory(filter);
+  };
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
   };
   return (
     <div className="bg-white rounded-xl p-8 h-fit relative shadow-sm dark:bg-slate-800">
@@ -115,11 +120,16 @@ function Project() {
                     key={element?.id}
                     className={`bg-slate-100 dark:bg-slate-700 aspect-square rounded-xl text-white flex flex-col items-start justify-start p-2 sm:p-4 h-auto`}
                   >
-                    <div className="bg-white w-full h-5/6 rounded-xl mb-4 overflow-hidden">
+                    <div
+                      className={`bg-white w-full h-5/6 rounded-xl mb-4 overflow-hidden ${
+                        imageLoaded ? "" : "skeleton"
+                      }`}
+                    >
                       <img
                         src={element?.image}
                         alt=""
                         className="h-full w-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-110"
+                        onLoad={handleImageLoad}
                       />
                     </div>
                     <h4 className="text-xs text-slate-400 line-clamp-1"> {element?.tools?.join(", ")}</h4>
