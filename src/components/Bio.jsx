@@ -3,8 +3,9 @@ import Profile from "../assets/profile.png";
 import { FaDownload, FaFacebookF, FaGift, FaGithub, FaInstagram, FaLinkedinIn, FaLocationDot } from "react-icons/fa6";
 import { IoMdPhonePortrait } from "react-icons/io";
 import { MdDarkMode, MdEmail, MdLightMode } from "react-icons/md";
-import CV from "../assets/CV_Salim_Bin_Sulaiman_Bahres.pdf";
+// import CV from "../assets/CV_Salim_Bin_Sulaiman_Bahres.pdf";
 import { ThemeContext } from "../ThemeContext";
+import { Link } from "react-router-dom";
 
 function Bio() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -13,14 +14,14 @@ function Bio() {
     setImageLoaded(true);
   };
 
-  const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = CV;
-    link.setAttribute("download", "CV.pdf");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  // const handleDownloadCV = () => {
+  //   const link = document.createElement("a");
+  //   link.href = CV;
+  //   link.setAttribute("download", "CV.pdf");
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   const handleLink = (link) => {
     switch (link) {
@@ -146,15 +147,16 @@ function Bio() {
           </div>
         </div>
       </div>
-      <button
-        className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg text-white text-sm mt-4 flex items-center mx-auto"
-        onClick={handleDownloadCV}
+      <Link
+        to={"https://drive.google.com/file/d/1XvukDeMKpHcNTy_QaxvBtVr6m7dhcpZ2/view?usp=sharing"}
+        target="_blank"
+        className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg text-white text-sm mt-4 flex items-center mx-auto w-fit"
       >
         <span className="me-2">
           <FaDownload />
         </span>
         Download Cv
-      </button>
+      </Link>
     </div>
   );
 }
