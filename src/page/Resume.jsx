@@ -20,7 +20,7 @@ function Resume() {
             </div>
             <div className="bg-rose-50 dark:bg-slate-500 rounded-md p-4 cursor-default">
               <div className="flex flex-col items-start justify-center group">
-                <h4 className="text-xs text-slate-500 font-medium line-clamp-1 dark:text-white">2020 - Now</h4>
+                <h4 className="text-xs text-slate-500 font-medium line-clamp-1 dark:text-white">2020 - 2024</h4>
                 <h3 className="text-slate-600 font-bold text-sm sm:text-base line-clamp-1 mt-1 group-hover:line-clamp-none dark:text-white">
                   Informatics Engineering - <span className="font-normal">Universitas Dian Nuswantoro</span>
                 </h3>
@@ -101,16 +101,16 @@ function Resume() {
                 <div className="flex flex-col justify-center mb-4">
                   <div className="flex flex-row justify-between text-slate-500 dark:text-white">
                     <h4 className="text-xs font-medium">Backend Dev</h4>
-                    <h4 className="text-xs">80%</h4>
+                    <h4 className="text-xs">70%</h4>
                   </div>
-                  <progress className="progress progress-warning w-full mt-2" value="80" max="100"></progress>
+                  <progress className="progress progress-warning w-full mt-2" value="70" max="100"></progress>
                 </div>
                 <div className="flex flex-col justify-center mb-4">
                   <div className="flex flex-row justify-between text-slate-500 dark:text-white">
                     <h4 className="text-xs font-medium">Mobile Dev</h4>
-                    <h4 className="text-xs">65%</h4>
+                    <h4 className="text-xs">55%</h4>
                   </div>
-                  <progress className="progress progress-success w-full mt-2" value="65" max="100"></progress>
+                  <progress className="progress progress-success w-full mt-2" value="55" max="100"></progress>
                 </div>
                 <div className="flex flex-col justify-center mb-4">
                   <div className="flex flex-row justify-between text-slate-500 dark:text-white">

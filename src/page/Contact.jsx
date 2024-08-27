@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { BsDatabase } from "react-icons/bs";
 import { CiMobile4 } from "react-icons/ci";
 import { FaCode, FaTelegramPlane } from "react-icons/fa";
@@ -12,24 +12,57 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const formRef = useRef(null);
+  // const handleSend = (e) => {
+  //   e.preventDefault();
+  //   setIsLoading(true);
+  //   axios
+  //     .post("https://664caa3cede9a2b556511d08.mockapi.io/message", {
+  //       name: name,
+  //       email: email,
+  //       message: message,
+  //     })
+  //     .then(function (response) {
+  //       setName("");
+  //       setEmail("");
+  //       setMessage("");
+  //       alert("Terimakasih, pesan anda saya terima");
+  //       setIsLoading(false);
+  //     })
+  //     .catch(function (error) {
+  //       alert("Error", error);
+  //     });
+  // };
   const handleSend = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    axios
-      .post("https://664caa3cede9a2b556511d08.mockapi.io/message", {
-        name: name,
-        email: email,
-        message: message,
+    fetch(
+      "https://script.google.com/macros/s/AKfycbx6_s8YTBBFxWktQ6_lUTYLElSS-ynI_NxIL_bc_UR1eudFlS3jIDism2X_WpOz0s4w/exec",
+      {
+        method: "POST",
+        body: new FormData(formRef.current),
+      }
+    )
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
       })
-      .then(function (response) {
+      .then((data) => {
         setName("");
         setEmail("");
         setMessage("");
-        alert("Terimakasih, pesan anda saya terima");
+        alert("Success sent your message");
         setIsLoading(false);
       })
-      .catch(function (error) {
-        alert("Error", error);
+      .catch((err) => {
+        console.error("There was a problem with the fetch operation:", err);
+        alert("Submission failed. Please try again.");
+        setName("");
+        setEmail("");
+        setMessage("");
+        setIsLoading(false);
       });
   };
   return (
@@ -42,12 +75,13 @@ function Contact() {
         <h1 className="text-sm sm:text-base text-slate-600 dark:text-white">
           For further discussion abaout <b>Skills</b> or <b>Project</b>, contact me via the form or email.
         </h1>
-        <form action="" className="mt-4 w-full" onSubmit={handleSend}>
+        <form action="" className="mt-4 w-full" onSubmit={handleSend} ref={formRef}>
           <label htmlFor="name" className="text-xs font-bold text-slate-500 ms-2 dark:text-white">
             Name *
           </label>
           <input
             onChange={(e) => setName(e.target.value)}
+            name="Name"
             value={name}
             required
             id="name"
@@ -59,6 +93,7 @@ function Contact() {
           </label>
           <input
             onChange={(e) => setEmail(e.target.value)}
+            name="Email"
             value={email}
             required
             id="email"
@@ -70,6 +105,7 @@ function Contact() {
           </label>
           <textarea
             onChange={(e) => setMessage(e.target.value)}
+            name="Message"
             value={message}
             required
             rows={3}
