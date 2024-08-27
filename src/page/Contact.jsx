@@ -12,27 +12,12 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [alertMsg, setAlertMsg] = useState({
+    status: "success",
+    visible: false,
+  });
   const formRef = useRef(null);
-  // const handleSend = (e) => {
-  //   e.preventDefault();
-  //   setIsLoading(true);
-  //   axios
-  //     .post("https://664caa3cede9a2b556511d08.mockapi.io/message", {
-  //       name: name,
-  //       email: email,
-  //       message: message,
-  //     })
-  //     .then(function (response) {
-  //       setName("");
-  //       setEmail("");
-  //       setMessage("");
-  //       alert("Terimakasih, pesan anda saya terima");
-  //       setIsLoading(false);
-  //     })
-  //     .catch(function (error) {
-  //       alert("Error", error);
-  //     });
-  // };
+
   const handleSend = (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -53,12 +38,32 @@ function Contact() {
         setName("");
         setEmail("");
         setMessage("");
-        alert("Success sent your message");
+        setAlertMsg({
+          status: "success",
+          visible: true,
+        });
+        // alert("Success sent your message");
+        setTimeout(() => {
+          setAlertMsg((prevAlertMsg) => ({
+            ...prevAlertMsg,
+            visible: false,
+          }));
+        }, 4000);
+
         setIsLoading(false);
       })
       .catch((err) => {
-        console.error("There was a problem with the fetch operation:", err);
-        alert("Submission failed. Please try again.");
+        setAlertMsg({
+          status: "failed",
+          visible: true,
+        });
+        // alert("Success sent your message");
+        setTimeout(() => {
+          setAlertMsg((prevAlertMsg) => ({
+            ...prevAlertMsg,
+            visible: false,
+          }));
+        }, 5000);
         setName("");
         setEmail("");
         setMessage("");
@@ -132,6 +137,47 @@ function Contact() {
               </div>
             )}
           </button>
+          <div
+            role="alert"
+            className={`alert mt-4 ${alertMsg.status == "success" ? "alert-success" : "alert-error"} ${
+              alertMsg.visible ? "" : "hidden"
+            } transition-all duration-500 ease-in-out`}
+          >
+            {alertMsg.status == "success" ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 shrink-0 stroke-current text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 shrink-0 stroke-current text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            )}
+            <span className="text-white">
+              {alertMsg.status == "success"
+                ? "Your message has been successfully sent."
+                : "Your message failed to send."}
+            </span>
+          </div>
         </form>
       </div>
       <Footer />
