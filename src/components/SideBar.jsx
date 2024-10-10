@@ -6,7 +6,7 @@ import { RiContactsBook3Line } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
 function SideBar() {
-  const [menu, setMenu] = useState(null);
+  const [menu, setMenu] = useState("about");
   const navigate = useNavigate();
   const handleMenu = (text) => {
     setMenu(text);
