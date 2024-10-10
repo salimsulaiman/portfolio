@@ -148,7 +148,7 @@ function Bio() {
         </div>
       </div>
       <Link
-        to={"https://drive.google.com/file/d/1y0wYGdhmGLWvkctthgA1EreACFx3Wy2X/view?usp=sharing"}
+        to={"https://drive.google.com/file/d/1jGKxM9bhUjeb5Ahy0ZpiShKyWMgo3zzD/view?usp=sharing"}
         target="_blank"
         className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg text-white text-sm mt-4 flex items-center mx-auto w-fit"
       >
